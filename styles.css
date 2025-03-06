@@ -1,0 +1,381 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    background-color: #070707;
+    color: #CCD6F6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    opacity: 0.7;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    z-index: 2;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-symbol {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #FFD700;
+    margin-right: 0.3rem;
+}
+
+.logo-text {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+/* Hamburger Menu Styles */
+.menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.nav {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: #FFD700;
+    text-decoration: underline;
+    text-decoration-color: #FFD700;
+    text-underline-offset: 4px;
+}
+
+.nav i {
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.nav i:hover {
+    color: #FFD700;
+}
+
+.container {
+    flex: 1;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    z-index: 2;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.main-content {
+    text-align: left;
+    width: 100%;
+}
+
+.main-content h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.highlight {
+    color: #FFD700;
+}
+
+.main-content p {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    color: #CCD6F6;
+}
+
+.address {
+    text-decoration: underline;
+    text-decoration-color: #FFD700;
+    text-underline-offset: 4px;
+    color: inherit;
+}
+
+.squiggly {
+    width: 180px;
+    height: auto;
+    margin: 1.5rem 0;
+    display: block;
+    opacity: 0.9;
+}
+
+.small-heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 1.25rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    color: #ffffff;
+    font-size: 1.25rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.social-links i {
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.social-links a:hover {
+    color: #FFD700;
+}
+
+.contact {
+    margin: 1.5rem 0;
+}
+
+.contact p {
+    font-size: 1.25rem;
+}
+
+.contact a {
+    color: #FFD700;
+    text-decoration: underline;
+    text-decoration-color: #FFD700;
+    text-underline-offset: 4px;
+    transition: opacity 0.3s ease;
+}
+
+.contact a:hover {
+    opacity: 0.8;
+}
+
+.footer {
+    padding: 1.5rem 2rem;
+    font-size: 1rem;
+    color: #8892B0;
+    text-align: left;
+    border-top: 1px solid rgba(136, 146, 176, 0.2);
+    z-index: 2;
+    position: relative;
+}
+
+.footer i.fa-heart {
+    color: #ff4444;
+    margin-left: 0.5rem;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem;
+        justify-content: space-between;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -250px;
+        width: 250px;
+        height: 100%;
+        background-color: #ffffff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 2rem;
+        z-index: 2;
+    }
+
+    .nav a {
+        color: #070707;
+        font-size: 1.2rem; /* Same as desktop */
+        margin-bottom: 1.5rem;
+    }
+
+    .nav a:hover {
+        color: #FFD700;
+    }
+
+    .nav i {
+        color: #070707;
+        font-size: 1.5rem; /* Same as desktop */
+    }
+
+    .nav i:hover {
+        color: #FFD700;
+    }
+
+    .menu-toggle:checked ~ .nav {
+        right: 0;
+    }
+
+    .menu-toggle:checked ~ .hamburger i::before {
+        content: "\f00d";
+    }
+
+    .container {
+        padding: 1.5rem;
+    }
+     
+    .main-content {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    .main-content h1 {
+        font-size: 2.5rem; /* Same as desktop */
+        line-height: 1.1;
+    }
+
+    .main-content p {
+        font-size: 1.25rem; /* Same as desktop */
+        line-height: 1.4;
+        padding: 0 0.5rem;
+    }
+
+    .squiggly {
+        width: 140px; /* Adjusted for layout, not font */
+    }
+
+    .small-heading {
+        font-size: 1.5rem; /* Same as desktop */
+    }
+
+    .social-links {
+        gap: 1rem;
+    }
+
+    .social-links a {
+        font-size: 1.25rem; /* Same as desktop */
+    }
+
+    .social-links i {
+        font-size: 1.5rem; /* Same as desktop */
+    }
+
+    .contact p {
+        font-size: 1.25rem; /* Same as desktop */
+    }
+
+    .footer {
+        padding: 1rem;
+        text-align: center;
+        font-size: 1rem; /* Same as desktop */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-symbol, .logo-text {
+        font-size: 1.5rem; /* Slightly smaller for logo only */
+    }
+
+    .hamburger {
+        font-size: 1.3rem;
+    }
+
+    .nav {
+        width: 200px;
+        padding: 1.5rem;
+    }
+
+    .nav a {
+        font-size: 1.2rem; /* Same as desktop */
+    }
+
+    .nav i {
+        font-size: 1.5rem; /* Same as desktop */
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    .main-content h1 {
+        font-size: 2.5rem; /* Same as desktop */
+    }
+
+    .main-content p {
+        font-size: 1.25rem; /* Same as desktop */
+    }
+
+    .squiggly {
+        width: 120px; /* Adjusted for layout */
+    }
+
+    .small-heading {
+        font-size: 1.5rem; /* Same as desktop */
+    }
+
+    .social-links {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .social-links a {
+        font-size: 1.25rem; /* Same as desktop */
+    }
+
+    .social-links i {
+        font-size: 1.5rem; /* Same as desktop */
+    }
+
+    .contact p {
+        font-size: 1.25rem; /* Same as desktop */
+    }
+
+    .footer {
+        font-size: 1rem; /* Same as desktop */
+    }
+}
